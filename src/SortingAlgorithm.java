@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
-public class MainProgram {
+public class SortingAlgorithm {
 	
 	
 	public static int smallest(int[] array) {
@@ -56,4 +57,26 @@ public class MainProgram {
 			System.out.println(Arrays.toString(array));
 		}
 	}
+	
+	public static void nativeSort(int[] array) {
+		Arrays.sort(array);
+		System.out.println(Arrays.toString(array));
+	}
+	
+	public static void sort(String[] array) {
+		Arrays.sort(array);
+		System.out.println(Arrays.toString(array));
+	}
+	
+	public static void sortIntegers(ArrayList<Integer> integers) {
+		Collections.sort(integers);
+		System.out.println(integers);
+	}
+	
+	public static void sortStrings(ArrayList<String> strings) {
+		Collections.sort(strings);
+		System.out.println(strings);
+	}
+	
+
 }
