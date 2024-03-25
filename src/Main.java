@@ -1,33 +1,51 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-		String input = "one\n" + "two\n"  +
-                "three\n" + "four\n" +
-                "five\n" + "one\n"  +
-                "six\n";
+		Scanner scanner = new Scanner(System.in);
+		
+		Container container1 = new Container();
+		Container container2 = new Container();
+		
+		while (true) {
+			System.out.println("Command :");
+			String input = scanner.nextLine();
+			String[] parts = input.split(" ");
+			
+			String command = parts[0];
+			int amount = Integer.valueOf(parts[1]);
+			
+			if (command.equals("quit")) {
+				break;
+			}
+			
+			if (command.equals("add")) {
+				container1.add(amount);
+				System.out.println("First: " + container1);
+				System.out.println("Second: " + container2);
 
-Scanner reader = new Scanner(input);
-
-ArrayList<String> read = new ArrayList<>();
-
-while (true) {
-    System.out.println("Enter an input: ");
-    String line = reader.nextLine();
-    System.out.println(line);
-    if (read.contains(line)) {
-        break;
-    }
-
-    read.add(line);
-}
-
-System.out.println("Thank you!");
-System.out.println(read);
-
-if (read.contains("six")) {
-    System.out.println("A value that should not have been added to the group was added to it.");
-}
+			}
+			
+			if (command.equals("move")) {
+				if (amount <= container1.contains()) {
+					container1.remove(amount);
+					container2.add(amount);
+				} else if (amount > container1.contains()){
+					container1.remove(container1.contains());
+					 if (amount + container2.contains() <= 100) {
+						 container2.add(amount);
+					 }
+				}
+				
+				System.out.println("First: " + container1);
+				System.out.println("Second: " + container2);
+			}
+			
+			if (command.equals("remove")) {
+				container2.remove(amount);
+				System.out.println("First: " + container1);
+				System.out.println("Second: " + container2);
+			}
+		}
 	}
 }
