@@ -11,7 +11,7 @@ public class Calculator {
 	}
 	
 	public void substract(int number) {
-		this.value += number;
+		this.value -= number;
 	}
 	
 	public int getValue() {
