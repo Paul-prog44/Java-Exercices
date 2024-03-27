@@ -1,13 +1,20 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.HashMap;
 
 public class Main {
 	public static void main(String[] args) {
-		TodoList2 list = new TodoList2();
-		Scanner scanner = new Scanner(System.in);
+		HashMap<String, String> hashmap = new HashMap<>();
+		hashmap.put("f.e", "for example");
+		hashmap.put("etc.", "and so on");
+		hashmap.put("i.e", "more precisely");
 		
-		UserInterfaceTodoList2 UiTodo = new UserInterfaceTodoList2(list, scanner);
+		Program program = new Program();
 		
-		UiTodo.start();
+		
+
+		program.printKeys(hashmap);
+		System.out.println("---");
+		program.printKeysWhere(hashmap, "i");
+		System.out.println("---");
+		program.printValuesOfKeysWhere(hashmap, ".e");
 	}
 }
