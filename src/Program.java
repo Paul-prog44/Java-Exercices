@@ -23,4 +23,18 @@ public class Program {
 			}
 		}
 	}
+	
+	public static void printValues(HashMap<String, Book1> hashmap) {
+		for (Book1 values: hashmap.values()) {
+			System.out.println(values);
+		}
+	}
+	
+	public static void printValueIfNameContains(HashMap<String, Book1> hashmap, String text) {
+		for (Book1 values: hashmap.values()) {
+			if (values.getName().contains(text)) {
+				System.out.println(values);
+			}
+		}
+	}
 }

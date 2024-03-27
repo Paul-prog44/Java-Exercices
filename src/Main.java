@@ -2,19 +2,13 @@ import java.util.HashMap;
 
 public class Main {
 	public static void main(String[] args) {
-		HashMap<String, String> hashmap = new HashMap<>();
-		hashmap.put("f.e", "for example");
-		hashmap.put("etc.", "and so on");
-		hashmap.put("i.e", "more precisely");
-		
-		Program program = new Program();
 		
 		
+		IOU mattsIOU = new IOU();
+		mattsIOU.setSum("Arthur", 51.5);
+		mattsIOU.setSum("Arthur", 10.5);
 
-		program.printKeys(hashmap);
-		System.out.println("---");
-		program.printKeysWhere(hashmap, "i");
-		System.out.println("---");
-		program.printValuesOfKeysWhere(hashmap, ".e");
+		System.out.println(mattsIOU.howMuchDoIOweTo("Arthur"));
+
 	}
 }
