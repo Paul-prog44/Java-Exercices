@@ -107,4 +107,27 @@ public class SimpleDate {
 		
 	}
 	
+	public boolean equals(Object object) {
+		if (this == object) {
+			return true;
+		}
+		
+		if (!(object instanceof SimpleDate)) {
+			return false;
+		}
+		
+		SimpleDate comparedObject = (SimpleDate) object;
+		if (this.day == comparedObject.day &&
+			this.month == comparedObject.month &&
+			this.year == comparedObject.year) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public int hashCode() {
+		return this.day + this.month +this.year;
+	}
+	
 }
