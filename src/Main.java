@@ -6,11 +6,11 @@ import java.util.HashMap;
 public class Main {
 	
 	public static void main(String[] args) {
-		ProductWarehouseWithHistory juice = new ProductWarehouseWithHistory("Juice", 1000.0, 1000.0);
-		juice.takeFromWarehouse(11.3);
-		juice.addToWarehouse(1.0);
-		//System.out.println(juice.history()); // [1000.0, 988.7, 989.7]
+		MisplacingBox box = new MisplacingBox();
+		box.add(new Item("Saludo", 5));
+		box.add(new Item("Pirkka", 5));
 
-		juice.printAnalysis();
+		System.out.println(box.isInBox(new Item("Saludo")));
+		System.out.println(box.isInBox(new Item("Pirkka")));
 	}
 }
