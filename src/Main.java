@@ -5,9 +5,9 @@ import java.util.List;
 public class Main {
 	
 	public static void main(String[] args) {
-		LitteracyRateReader lts = new LitteracyRateReader();
+		BookComparator bc = new BookComparator();
 		
-		lts.readFile();
+		bc.compareBooks();
 	}
 	
 }
