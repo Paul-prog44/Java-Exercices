@@ -8,26 +8,19 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
-		Person3 anna = new Person3("Anna", Education.PHD);
-		Person3 bernard = new Person3("Bernard", Education.BA);
-		Person3 didier = new Person3("Didier", Education.HS);
-		Person3 marion = new Person3("Marion", Education.MA);
+		Hand hand = new Hand();
 
+		hand.add(new Card(12, Suit.HEART));
+		hand.add(new Card(4, Suit.SPADE));
+		hand.add(new Card(2, Suit.DIAMOND));
+		hand.add(new Card(14, Suit.SPADE));
+		hand.add(new Card(7, Suit.HEART));
+		hand.add(new Card(2, Suit.SPADE));
 
-		Employees university  = new Employees();
-		university .add(anna);
-		university .add(bernard);
-		university .add(didier);
-		university .add(marion);
-		university.add(new Person3("Petrus", Education.PHD));
-		university.add(new Person3("Arto", Education.HS));
-		university.add(new Person3("Elina", Education.PHD));
+		hand.sortBySuit();
+
+		hand.print();
 		
-		university.print();
-		university.fire(Education.HS);
-		System.out.println("==");
-
-		university.print();
 	}
 	
 }
