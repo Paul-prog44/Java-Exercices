@@ -6,21 +6,11 @@ import java.util.Scanner;
 public class Main {
 	
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		
-		Hand hand = new Hand();
-
-		hand.add(new Card(12, Suit.HEART));
-		hand.add(new Card(4, Suit.SPADE));
-		hand.add(new Card(2, Suit.DIAMOND));
-		hand.add(new Card(14, Suit.SPADE));
-		hand.add(new Card(7, Suit.HEART));
-		hand.add(new Card(2, Suit.SPADE));
-
-		hand.sortBySuit();
-
-		hand.print();
-		
-	}
 	
+		Statistics st = new Statistics();
+        System.out.println("Printing the average of the statistics: " + st.average());
+        System.out.println("Adding number 22");
+        st.add(22);
+        System.out.println("Printing the average of the statistics: " + st.average());
+	}
 }
