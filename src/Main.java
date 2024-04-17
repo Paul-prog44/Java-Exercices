@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -5,12 +7,17 @@ import java.util.Scanner;
 
 public class Main {
 	
-	public static void main(String[] args) {
-	
-		Statistics st = new Statistics();
-        System.out.println("Printing the average of the statistics: " + st.average());
-        System.out.println("Adding number 22");
-        st.add(22);
-        System.out.println("Printing the average of the statistics: " + st.average());
+	public static void main(String[] args)  {
+		try {
+			PrintWriter writer = new PrintWriter("C:\\Users\\Gérald\\eclipse-workspace\\HelsinkiMOOC\\toWrite.txt");
+			writer.println("Hello world");
+			writer.println("More text");
+			writer.print("A lot more");
+			writer.print("test");
+			writer.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
 	}
 }
