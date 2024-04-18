@@ -1,1 +1,6 @@
+stylo,pen
+singe,monkey
 apina,monkey
+epinard,spinach
+banane,banana
+banaani,banana

@@ -3,21 +3,28 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 	
 	public static void main(String[] args)  {
-		try {
-			PrintWriter writer = new PrintWriter("C:\\Users\\Gérald\\eclipse-workspace\\HelsinkiMOOC\\toWrite.txt");
-			writer.println("Hello world");
-			writer.println("More text");
-			writer.print("A lot more");
-			writer.print("test");
-			writer.close();
-		} catch (Exception e) {
-			System.out.println(e);
-		}
+		Locker<String> string = new Locker<>();
 		
+		string.setValue(":)");
+		
+		System.out.println(string.getValue());
+		
+		Locker<Integer> number = new Locker<>();
+		
+		number.setValue(5);
+		
+		System.out.println(number.getValue());
+		
+		Locker<Random> random = new Locker<>();
+		
+		random.setValue(new Random());
+		
+		System.out.println(random.getValue().nextDouble());
 	}
 }

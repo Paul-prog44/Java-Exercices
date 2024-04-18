@@ -19,7 +19,6 @@ public class Dictionary {
 				String line = scanner.nextLine();
 				String[] parts = line.split(",");
 				words.put(parts[0], parts[1]);
-				System.out.println(parts[0] + " " +parts[1]);
 				}
 			
 			} catch (Exception e) {
@@ -34,16 +33,50 @@ public class Dictionary {
 			for (String key : words.keySet()) {
 				String value = words.get(key);
 				writer.println(key + "," + value);
-				writer.close();
 			}
+			writer.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 		
 	}
 	
+	public void delete(String word) {
+		try (Scanner scanner = new Scanner(Paths.get("toWrite.txt"))) {
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				String[] parts = line.split(",");
+				words.put(parts[0], parts[1]);
+				}
+			
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		words.remove(word);
+		try {
+			PrintWriter writer = new PrintWriter("toWrite.txt");
+			for (String key : words.keySet()) {
+				String value = words.get(key);
+				writer.println(key + "," + value);
+			}
+			writer.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
 	
 	public String translate(String word) {
+		try (Scanner scanner = new Scanner(Paths.get("toWrite.txt"))) {
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				String[] parts = line.split(",");
+				words.put(parts[0], parts[1]);
+				}
+			
+			} catch (Exception e) {
+				System.out.println(e);
+			}
 		return words.get(word);
 	}
 }
